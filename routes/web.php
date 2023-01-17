@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,11 @@ Route::get('/kontak', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/pembayaran', function () {
+    return view('user.pembayaran');
+});
+Route::get('/register', [StudentController::class, 'register'])->name('register');
+Route::post('/registrasi', [StudentController::class, 'registrasi'])->name('registrasi');
+Route::get('/login', [StudentController::class, 'login'])->name('login');
+Route::post('/loginpage', [StudentController::class, 'loginpage'])->name('loginpage');
+Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('dashboard');

@@ -11,12 +11,15 @@
 </head>
 
 <body style=" background-image: linear-gradient(to right, #263dc0, #162a60, #130153);">
+    @if (Session::get('success')) <div class="alert alert-success role="alert"> {{ session('success') }} </div>
+    
+    @endif
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mt-5">
                 <div class="col-md-12 col-lg-10">
                     <div class="wrap d-md-flex">
-                        <div class="img" style="background-image: url(assets/imgs/gedung.jpg);">
+                        <div class="img" style="background-image: url('assets/images/ppdb.jpg');">
                         </div>
                         <div class="login-wrap p-4 p-md-5">
                             <div class="d-flex">
@@ -25,10 +28,12 @@
                                 </div>
 
                             </div>
-                            <form action="https://fajarafrizal.my.id/ppdb/auth/login" class="signin-form" method="post">
-                                <input type="hidden" name="_token" value="5jOmejOk8vDROMmQzF6jJhDP3ItJc5RhBmMvigLK">                                                                                                                                
+                            <form action="{{ route('loginpage') }}" class="signin-form" method="POST">
+                                @csrf
+                                                                                                                
                                 <div class="form-group mb-3">
-                                    <label class="label" for="name">Email</label>
+                                    <h4>Masuk ke Akun PPDB-mu </h4>
+                                    <label class="label" for="email">Email</label>
                                     <input type="text" class="form-control" placeholder="Masukan Email"
                                         name="email">
                                 </div>
@@ -57,6 +62,105 @@
         integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
         data-cf-beacon='{"rayId":"77d8c5793b2c7d43","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}'
         crossorigin="anonymous"></script>
+
+        <section class="has-bg-img py-0">
+            <div class="container">
+                <div class="footer">
+                    <div class="footer-lists">
+                        <ul class="list">
+                            <li class="list-head">
+                                <h6 class="font-weight-bold">ABOUT US</h6>
+                            </li>
+                            <li class="list-body">
+                                <a href="#" class="logo">
+                                    <img src="https://fajarafrizal.my.id/ppdb/assets/imgs/logo2.png"
+                                        >
+                                    <h6>SMK WIKRAMA BOGOR</h6>
+                                </a>
+                                <p>SMK Wikrama Bogor didirikan oleh Ir. Itasia Dina Sulvianti dan Dr.H.RP Agus Lelana dibawah naungan Yayasan Prawitama pada tahun 1996 di bekas gudang KUD. Kompetensi keahlian yang pertama dibuka pada saat itu adalah sekretaris dengan jumlah hanya 34 siswa.</p>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li class="list-head">
+                                <h6 class="font-weight-bold">USEFUL LINKS</h6>
+                            </li>
+                            <li class="list-body">
+                                <div class="row">
+                                    <div class="col">
+                               <a href="/beranda">Beranda</a>
+                               <a href="/jurusan">Jurusan</a>
+                               <a href="/tentang">Tentang Kami</a>
+                               <a href="/testimoni">  Testimoni</a>
+                           </div>
+                           <div class="col">
+                               <a href="/kontak">Hubungi Kami</a>
+                               <a href="{{ route('login') }}"></a>
+                           </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li class="list-head">
+                                <h6 class="font-weight-bold">CONTACT INFO</h6>
+                            </li>
+                            <li class="list-body">
+                                <p>Contact us and we'll get back to you within 24 hours.</p>
+                       <p><i class="ti-location-pin"></i>         <p> Jl. Raya Wangun No.21, RT.01/RW.06,</p>
+                       <p>Sindangsari, Kec. Bogor Tim., Kota Bogor,</p>
+                       <p> Jawa Barat 16146</p></p>
+                       <p><i class="ti-email"></i> prohumasi@smkwikrama.sch.id</p>
+                                <div class="social-links">
+                                    <a href="javascript:void(0)" class="link"><i
+                                            class="ti-facebook"></i></a>
+                                    <a href="javascript:void(0)" class="link"><i
+                                            class="ti-twitter-alt"></i></a>
+                                    <a href="javascript:void(0)" class="link"><i
+                                            class="ti-google"></i></a>
+                                    <a href="javascript:void(0)" class="link"><i
+                                            class="ti-pinterest-alt"></i></a>
+                                    <a href="javascript:void(0)" class="link"><i
+                                            class="ti-instagram"></i></a>
+                                    <a href="javascript:void(0)" class="link"><i
+                                            class="ti-rss"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script>
+            $(".theSelect").select2();
+        </script>
+        <script>
+            function checkvalue(val) {
+                if (val === "lainnya") {
+                    document.getElementById('lainnya1').style.display = 'block';
+                } else {
+                    document.getElementById('lainnya1').style.display = 'none';
+                }
+            }
+        </script>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
+
 </body>
 
 </html>

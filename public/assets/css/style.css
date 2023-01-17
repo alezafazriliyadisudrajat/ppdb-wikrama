@@ -63,7 +63,7 @@ body {
 .hero_area {
   height: 100vh;
   background-color: #b5caee;
-  background-image: url(../images/Gedung.jpg);
+  background-image: url(../images/gedung2.jpeg);
   background-size: cover;
 }
 
@@ -477,7 +477,7 @@ a:focus {
 }
 
 .login_section {
-  background-image: url(../images/login-bg.jpg);
+  background-image: url(../images/ppdb.jpg);
   background-size: cover;
   color: #ffffff;
 }

@@ -86,7 +86,7 @@
               Create your free account now and get immediate access to 100s of
               online courses
             </p>
-            <a href="">
+            <a href="{{ route('login') }}">
               REGISTER NOW
             </a>
           </div>
